@@ -153,4 +153,50 @@ public class InventoryServices {
         }
         return inventoryDomains;
     }
+
+    public static void AddNewInventoryItem(InventoryDomain inv) throws ClassNotFoundException{
+        try{
+            Connection connection = DBConnectionService.getConnection();
+            assert connection != null;
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Inventory (ID,Name, Quantity, Category_ID, Location_ID) VALUES (?, ?, ?, ?,?)");
+            preparedStatement.setInt(1, inv.getID());
+            preparedStatement.setString(2, inv.getItemName());
+            preparedStatement.setInt(3, inv.getItemQuantity());
+            preparedStatement.setInt(4, inv.getItemCategory().getID());
+            preparedStatement.setInt(5, inv.getItemLocation().getID());
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void UpdateExistingInventoryItemByID(InventoryDomain inv) throws ClassNotFoundException{
+        try{
+            Connection connection = DBConnectionService.getConnection();
+            assert connection != null;
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Inventory SET Name = ?, Quantity = ?, Category_ID = ?, Location_ID = ? WHERE ID = ?");
+            preparedStatement.setString(1, inv.getItemName());
+            preparedStatement.setInt(2, inv.getItemQuantity());
+            preparedStatement.setInt(3, inv.getItemCategory().getID());
+            preparedStatement.setInt(4, inv.getItemLocation().getID());
+            preparedStatement.setInt(5, inv.getID());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void DeleteExistingInventoryItemById(int ID){
+        try{
+            Connection connection = DBConnectionService.getConnection();
+            assert connection != null;
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM Inventory WHERE ID = ?");
+            preparedStatement.setInt(1, ID);
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
 }

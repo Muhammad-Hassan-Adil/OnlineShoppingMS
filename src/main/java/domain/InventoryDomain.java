@@ -6,13 +6,6 @@ public class InventoryDomain {
     private ItemCategoryDomain itemCategory;
     private ItemLocationDomain itemLocation;
     public InventoryDomain() {}
-    public InventoryDomain(int ID, String itemName, int itemQuantity, ItemCategoryDomain itemCategory, ItemLocationDomain itemLocation) {
-        this.ID = ID;
-        this.itemName = itemName;
-        this.itemQuantity = itemQuantity;
-        this.itemCategory = itemCategory;
-        this.itemLocation = itemLocation;
-    }
     public int getID() {
         return ID;
     }
@@ -42,6 +35,13 @@ public class InventoryDomain {
     }
     public void setItemLocation(ItemLocationDomain itemLocation) {
         this.itemLocation = itemLocation;
+    }
+    public String toString(){
+        return "ID: " + ID + "\n" +
+                "Item Name: " + itemName + "\n" +
+                "Item Quantity: " + itemQuantity + "\n" +
+                "Item Category: " + itemCategory.getID() + "\n" +
+                "Item Location: " + itemLocation.getLocationName() + "\n";
     }
 }
 

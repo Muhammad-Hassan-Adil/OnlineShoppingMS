@@ -1,12 +1,9 @@
 package resources;
-//import domain.ItemCategoryDomain;
-//import domain.ItemLocationDomain;
-//import domain.InventoryDomain;
+import domain.InventoryDomain;
 import services.InventoryServices;
 import com.google.gson.Gson;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-//import javax.ws.rs.core.Response;
 @Path("/inventory")
 public class Resource {
     @GET
@@ -62,6 +59,47 @@ public class Resource {
     public String FetchAllByCategoryAndLocation(@QueryParam("category") int category, @QueryParam("location") int location) {
         try {
             return new Gson().toJson(InventoryServices.FetchAllByLocationAndCategory(location, category));
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+        return null;
+    }
+    @POST
+    @Path("/add")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String AddInventory(String payload) {
+        try {
+            InventoryDomain inventoryDomain = new Gson().fromJson(payload, InventoryDomain.class);
+            InventoryServices.AddNewInventoryItem(inventoryDomain);
+            return new Gson().toJson(inventoryDomain);
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+        return null;
+    }
+    @PUT
+    @Path("/{InvId}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String UpdateInventory(@PathParam("InvId") int InvId, String payload) {
+        try {
+            InventoryDomain inventoryDomain = new Gson().fromJson(payload, InventoryDomain.class);
+            inventoryDomain.setID(InvId);
+            InventoryServices.UpdateExistingInventoryItemByID(inventoryDomain);
+            return new Gson().toJson(inventoryDomain);
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+        return null;
+    }
+    @DELETE
+    @Path("/{InvId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String DeleteInventory(@PathParam("InvId") int InvId) {
+        try {
+            InventoryServices.DeleteExistingInventoryItemById(InvId);
+            return new Gson().toJson("OK");
         } catch (Exception exc) {
             exc.printStackTrace();
         }
