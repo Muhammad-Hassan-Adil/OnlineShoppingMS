@@ -20,7 +20,4 @@ public class DBConnectionService {
         }
         return null;
     }
-    public static void closeConnection() {
-        dataSource.close();
-    }
 }

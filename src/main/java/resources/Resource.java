@@ -6,6 +6,11 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 @Path("/inventory")
 public class Resource {
+    private InventoryServices InventoryServices = new InventoryServices();
+
+    public Resource() throws ClassNotFoundException {
+    }
+
     @GET
     @Path("/{InvId}")
     @Produces(MediaType.APPLICATION_JSON)

@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04f00626-82a9-4b63-a917-dc26f043a344" name="Changes" comment="20% lines tested">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InventoryServicesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/InventoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ItemCategoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ItemLocationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ResourceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/InventoryDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/InventoryDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/DBConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DBConnectionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/InventoryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/InventoryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InventoryServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,26 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hassan/Desktop/OnlineShoppingMS/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hassan/Desktop/OnlineShoppingMS/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -81,11 +80,30 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.All in OnlineShoppingMS">
     <configuration name="All in OnlineShoppingMS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlineShoppingMS" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineShoppingMS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DBConnectionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBConnectionTest.testCloseConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineShoppingMS" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DBConnectionTest" />
+      <option name="METHOD_NAME" value="testCloseConnection" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -214,6 +232,8 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in OnlineShoppingMS" />
+      <item itemvalue="JUnit.DBConnectionTest" />
+      <item itemvalue="JUnit.DBConnectionTest.testCloseConnection" />
       <item itemvalue="JUnit.InventoryTest" />
       <item itemvalue="JUnit.ResourceTest" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.90" />
@@ -221,6 +241,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in OnlineShoppingMS" />
+        <item itemvalue="JUnit.DBConnectionTest" />
+        <item itemvalue="JUnit.DBConnectionTest.testCloseConnection" />
         <item itemvalue="JUnit.InventoryTest" />
         <item itemvalue="JUnit.ResourceTest" />
       </list>
@@ -236,7 +258,8 @@
       <updated>1690354905268</updated>
       <workItem from="1690354907327" duration="11946000" />
       <workItem from="1690456355861" duration="894000" />
-      <workItem from="1690471491578" duration="5505000" />
+      <workItem from="1690471491578" duration="10266000" />
+      <workItem from="1690528139431" duration="859000" />
     </task>
     <task id="LOCAL-00001" summary="Get Done">
       <option name="closed" value="true" />
@@ -254,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690366502206</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20% lines tested">
+      <option name="closed" value="true" />
+      <created>1690482111037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690482111037</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,10 +298,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="20% lines tested" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$DBConnectionTest.ic" NAME="DBConnectionTest Coverage Results" MODIFIED="1690527982305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$DBConnectionTest_testCloseConnection.ic" NAME="DBConnectionTest.testCloseConnection Coverage Results" MODIFIED="1690526765130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$InventoryTest.ic" NAME="InventoryTest Coverage Results" MODIFIED="1690472376481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>domain.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OnlineShoppingMS$All_in_OnlineShoppingMS.ic" NAME="All in OnlineShoppingMS Coverage Results" MODIFIED="1690475006813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/OnlineShoppingMS$InventoryServicesTest.ic" NAME="InventoryServicesTest Coverage Results" MODIFIED="1690475977208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$Tomcat_8_5_90.ic" NAME="Tomcat 8.5.90 Coverage Results" MODIFIED="1690524684217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$All_in_OnlineShoppingMS.ic" NAME="All in OnlineShoppingMS Coverage Results" MODIFIED="1690528007092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$InventoryServicesTest.ic" NAME="InventoryServicesTest Coverage Results" MODIFIED="1690526425583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
