@@ -1,5 +1,6 @@
 import domain.ItemCategoryDomain;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,7 +23,7 @@ public class ItemCategoryTest {
     }
 
     @Test
-    public void testGetIDDefConstructor(){
+    public void testGetIDDefConstructor() {
         item = new ItemCategoryDomain();
         assertEquals(0, item.getID());
     }

@@ -9,15 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04f00626-82a9-4b63-a917-dc26f043a344" name="Changes" comment="20% lines tested">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" afterDir="false" />
+    <list default="true" id="04f00626-82a9-4b63-a917-dc26f043a344" name="Changes" comment="73% lines tested">
       <change afterPath="$PROJECT_DIR$/src/test/java/ResourceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/InventoryDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/InventoryDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/ItemCategoryDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/ItemCategoryDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/ItemLocationDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/ItemLocationDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/resources/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/Resource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/DBConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DBConnectionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/InventoryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/InventoryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DBConnectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InventoryServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/InventoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InventoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ItemCategoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ItemCategoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ItemLocationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ItemLocationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +44,22 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="75840320-1c63-44fd-9589-0f84606d8177" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f9a134f2-c77f-4c84-ac99-4451401dd38f" />
+        <option name="url" value="https://github.com/Muhammad-Hassan-Adil/OnlineShoppingMS.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -64,6 +88,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -89,51 +114,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ResourceTest.testFetchAllInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlineShoppingMS" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DBConnectionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBConnectionTest.testCloseConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OnlineShoppingMS" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DBConnectionTest" />
-      <option name="METHOD_NAME" value="testCloseConnection" />
+      <option name="MAIN_CLASS_NAME" value="ResourceTest" />
+      <option name="METHOD_NAME" value="testFetchAllInventory" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OnlineShoppingMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InventoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ResourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OnlineShoppingMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="resources.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="resources" />
-      <option name="MAIN_CLASS_NAME" value="resources.ResourceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,19 +223,13 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in OnlineShoppingMS" />
-      <item itemvalue="JUnit.DBConnectionTest" />
-      <item itemvalue="JUnit.DBConnectionTest.testCloseConnection" />
-      <item itemvalue="JUnit.InventoryTest" />
-      <item itemvalue="JUnit.ResourceTest" />
+      <item itemvalue="JUnit.ResourceTest.testFetchAllInventory" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.90" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in OnlineShoppingMS" />
-        <item itemvalue="JUnit.DBConnectionTest" />
-        <item itemvalue="JUnit.DBConnectionTest.testCloseConnection" />
-        <item itemvalue="JUnit.InventoryTest" />
-        <item itemvalue="JUnit.ResourceTest" />
+        <item itemvalue="JUnit.ResourceTest.testFetchAllInventory" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +244,10 @@
       <workItem from="1690354907327" duration="11946000" />
       <workItem from="1690456355861" duration="894000" />
       <workItem from="1690471491578" duration="10266000" />
-      <workItem from="1690528139431" duration="859000" />
+      <workItem from="1690528139431" duration="1217000" />
+      <workItem from="1690533379944" duration="888000" />
+      <workItem from="1690535200032" duration="1768000" />
+      <workItem from="1690537739711" duration="3552000" />
     </task>
     <task id="LOCAL-00001" summary="Get Done">
       <option name="closed" value="true" />
@@ -285,26 +273,56 @@
       <option name="project" value="LOCAL" />
       <updated>1690482111037</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="73% lines tested">
+      <option name="closed" value="true" />
+      <created>1690533027872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690533027872</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Get Done" />
     <MESSAGE value="All functions done" />
     <MESSAGE value="20% lines tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="20% lines tested" />
+    <MESSAGE value="73% lines tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="73% lines tested" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$DBConnectionTest.ic" NAME="DBConnectionTest Coverage Results" MODIFIED="1690527982305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$DBConnectionTest_testCloseConnection.ic" NAME="DBConnectionTest.testCloseConnection Coverage Results" MODIFIED="1690526765130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest_TestDeleteInventory.ic" NAME="ResourceTest.TestDeleteInventory Coverage Results" MODIFIED="1690540964399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest_TestFetchAllByCategory.ic" NAME="ResourceTest.TestFetchAllByCategory Coverage Results" MODIFIED="1690539599489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest_TestUpdateInventory.ic" NAME="ResourceTest.TestUpdateInventory Coverage Results" MODIFIED="1690540643384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$InventoryTest.ic" NAME="InventoryTest Coverage Results" MODIFIED="1690472376481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>domain.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$Tomcat_8_5_90.ic" NAME="Tomcat 8.5.90 Coverage Results" MODIFIED="1690524684217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/OnlineShoppingMS$All_in_OnlineShoppingMS.ic" NAME="All in OnlineShoppingMS Coverage Results" MODIFIED="1690528007092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$All_in_OnlineShoppingMS.ic" NAME="All in OnlineShoppingMS Coverage Results" MODIFIED="1690541251858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest.ic" NAME="ResourceTest Coverage Results" MODIFIED="1690539408217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest_testFetchAllInventory.ic" NAME="ResourceTest.testFetchAllInventory Coverage Results" MODIFIED="1690539483803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OnlineShoppingMS$ResourceTest_TestAddNewInventoryItem.ic" NAME="ResourceTest.TestAddNewInventoryItem Coverage Results" MODIFIED="1690540407171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OnlineShoppingMS$InventoryServicesTest.ic" NAME="InventoryServicesTest Coverage Results" MODIFIED="1690526425583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

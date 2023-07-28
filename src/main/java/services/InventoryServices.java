@@ -1,8 +1,13 @@
 package services;
+
+import domain.InventoryDomain;
 import domain.ItemCategoryDomain;
 import domain.ItemLocationDomain;
-import domain.InventoryDomain;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class InventoryServices {
@@ -16,13 +21,13 @@ public class InventoryServices {
         this.connection = connection;
     }
 
-    public InventoryDomain FetchByID(int id){
+    public InventoryDomain FetchByID(int id) {
         InventoryDomain inventoryDomain = null;
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Inventory INNER JOIN Item_category ON Inventory.Category_ID = Item_Category.Category_ID INNER JOIN Item_Location ON Inventory.Location_ID = Item_Location.Location_ID WHERE ID = ?");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 inventoryDomain = new InventoryDomain();
                 inventoryDomain.setID(resultSet.getInt("ID"));
                 inventoryDomain.setItemName(resultSet.getString("Name"));
@@ -37,17 +42,18 @@ public class InventoryServices {
                 inventoryDomain.setItemLocation(itemLocationDomain);
             }
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return inventoryDomain;
     }
-    public ArrayList<InventoryDomain> FetchAll(){
+
+    public ArrayList<InventoryDomain> FetchAll() {
         ArrayList<InventoryDomain> inventoryDomains = new ArrayList<>();
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Inventory INNER JOIN Item_category ON Inventory.Category_ID = Item_Category.Category_ID INNER JOIN Item_Location ON Inventory.Location_ID = Item_Location.Location_ID");
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 InventoryDomain inventoryDomain = new InventoryDomain();
                 inventoryDomain.setID(resultSet.getInt("ID"));
                 inventoryDomain.setItemName(resultSet.getString("Name"));
@@ -63,19 +69,19 @@ public class InventoryServices {
                 inventoryDomains.add(inventoryDomain);
             }
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return inventoryDomains;
     }
 
-    public ArrayList<InventoryDomain> FetchAllByCategory(int id) throws ClassNotFoundException{
+    public ArrayList<InventoryDomain> FetchAllByCategory(int id) throws ClassNotFoundException {
         ArrayList<InventoryDomain> inventoryDomains = new ArrayList<>();
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Inventory INNER JOIN Item_category ON Inventory.Category_ID = Item_Category.Category_ID INNER JOIN Item_Location ON Inventory.Location_ID = Item_Location.Location_ID WHERE Inventory.Category_ID = ?");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 InventoryDomain inventoryDomain = new InventoryDomain();
                 inventoryDomain.setID(resultSet.getInt("ID"));
                 inventoryDomain.setItemName(resultSet.getString("Name"));
@@ -91,19 +97,19 @@ public class InventoryServices {
                 inventoryDomains.add(inventoryDomain);
             }
             connection.close();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return inventoryDomains;
     }
 
-    public ArrayList<InventoryDomain> FetchAllByLocation(int id) throws ClassNotFoundException{
+    public ArrayList<InventoryDomain> FetchAllByLocation(int id) throws ClassNotFoundException {
         ArrayList<InventoryDomain> inventoryDomains = new ArrayList<>();
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Inventory INNER JOIN Item_category ON Inventory.Category_ID = Item_Category.Category_ID INNER JOIN Item_Location ON Inventory.Location_ID = Item_Location.Location_ID WHERE Inventory.Location_ID = ?");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 InventoryDomain inventoryDomain = new InventoryDomain();
                 inventoryDomain.setID(resultSet.getInt("ID"));
                 inventoryDomain.setItemName(resultSet.getString("Name"));
@@ -119,20 +125,20 @@ public class InventoryServices {
                 inventoryDomains.add(inventoryDomain);
             }
             connection.close();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-            }
+        }
         return inventoryDomains;
     }
 
-    public ArrayList<InventoryDomain> FetchAllByLocationAndCategory(int Loc_ID, int Cat_ID) throws ClassNotFoundException{
+    public ArrayList<InventoryDomain> FetchAllByLocationAndCategory(int Loc_ID, int Cat_ID) throws ClassNotFoundException {
         ArrayList<InventoryDomain> inventoryDomains = new ArrayList<>();
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Inventory INNER JOIN Item_category ON Inventory.Category_ID = Item_Category.Category_ID INNER JOIN Item_Location ON Inventory.Location_ID = Item_Location.Location_ID WHERE Inventory.Location_ID = ? AND Inventory.Category_ID = ?");
             preparedStatement.setInt(1, Loc_ID);
             preparedStatement.setInt(2, Cat_ID);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 InventoryDomain inventoryDomain = new InventoryDomain();
                 inventoryDomain.setID(resultSet.getInt("ID"));
                 inventoryDomain.setItemName(resultSet.getString("Name"));
@@ -148,14 +154,14 @@ public class InventoryServices {
                 inventoryDomains.add(inventoryDomain);
             }
             connection.close();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return inventoryDomains;
     }
 
-    public void AddNewInventoryItem(InventoryDomain inv) throws ClassNotFoundException{
-        try{
+    public void AddNewInventoryItem(InventoryDomain inv) throws ClassNotFoundException {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Inventory (ID,Name, Quantity, Category_ID, Location_ID) VALUES (?, ?, ?, ?,?)");
             preparedStatement.setInt(1, inv.getID());
             preparedStatement.setString(2, inv.getItemName());
@@ -164,13 +170,13 @@ public class InventoryServices {
             preparedStatement.setInt(5, inv.getItemLocation().getID());
             preparedStatement.executeUpdate();
             connection.close();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void UpdateExistingInventoryItemByID(InventoryDomain inv) throws ClassNotFoundException{
-        try{
+    public void UpdateExistingInventoryItemByID(InventoryDomain inv) throws ClassNotFoundException {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Inventory SET Name = ?, Quantity = ?, Category_ID = ?, Location_ID = ? WHERE ID = ?");
             preparedStatement.setString(1, inv.getItemName());
             preparedStatement.setInt(2, inv.getItemQuantity());
@@ -178,18 +184,18 @@ public class InventoryServices {
             preparedStatement.setInt(4, inv.getItemLocation().getID());
             preparedStatement.setInt(5, inv.getID());
             preparedStatement.executeUpdate();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void DeleteExistingInventoryItemById(int ID){
-        try{
+    public void DeleteExistingInventoryItemById(int ID) {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM Inventory WHERE ID = ?");
             preparedStatement.setInt(1, ID);
             preparedStatement.executeUpdate();
             connection.close();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

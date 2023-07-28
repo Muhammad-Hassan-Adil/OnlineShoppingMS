@@ -1,12 +1,15 @@
 package resources;
+
+import com.google.gson.Gson;
 import domain.InventoryDomain;
 import services.InventoryServices;
-import com.google.gson.Gson;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
 @Path("/inventory")
 public class Resource {
-    private InventoryServices InventoryServices = new InventoryServices();
+    public InventoryServices InventoryServices = new InventoryServices();
 
     public Resource() throws ClassNotFoundException {
     }
@@ -34,6 +37,7 @@ public class Resource {
         }
         return null;
     }
+
     @GET
     @Path("/listByCategory")
     @Produces(MediaType.APPLICATION_JSON)
@@ -69,6 +73,7 @@ public class Resource {
         }
         return null;
     }
+
     @POST
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -83,6 +88,7 @@ public class Resource {
         }
         return null;
     }
+
     @PUT
     @Path("/{InvId}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -98,13 +104,14 @@ public class Resource {
         }
         return null;
     }
+
     @DELETE
     @Path("/{InvId}")
     @Produces(MediaType.APPLICATION_JSON)
     public String DeleteInventory(@PathParam("InvId") int InvId) {
         try {
             InventoryServices.DeleteExistingInventoryItemById(InvId);
-            return new Gson().toJson("OK");
+            return "Deleted";
         } catch (Exception exc) {
             exc.printStackTrace();
         }

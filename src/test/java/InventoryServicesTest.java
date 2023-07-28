@@ -1,17 +1,21 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 import domain.InventoryDomain;
 import domain.ItemCategoryDomain;
 import domain.ItemLocationDomain;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import services.InventoryServices;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.mockito.MockitoAnnotations;
-import services.InventoryServices;
-import java.util.*;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
 public class InventoryServicesTest {
 
     @Mock
@@ -220,7 +224,8 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testDeleteExistingInventoryItemById() throws SQLException, ClassNotFoundException {;
+    public void testDeleteExistingInventoryItemById() throws SQLException, ClassNotFoundException {
+        ;
         int id = 1;
         inventoryServices.DeleteExistingInventoryItemById(id);
         verify(mockPreparedStatement, times(1)).setInt(1, id);

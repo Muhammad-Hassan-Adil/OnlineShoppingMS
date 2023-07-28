@@ -1,10 +1,13 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 import domain.InventoryDomain;
 import domain.ItemCategoryDomain;
 import domain.ItemLocationDomain;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+
 public class InventoryTest {
 
     @Mock
@@ -29,7 +32,7 @@ public class InventoryTest {
     }
 
     @Test
-    public void testGetIDDefConstructor(){
+    public void testGetIDDefConstructor() {
         inv = new InventoryDomain();
         assertEquals(0, inv.getID());
     }
