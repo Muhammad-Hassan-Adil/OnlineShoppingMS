@@ -1,4 +1,4 @@
-import domain.ItemLocationDomain;
+import domain.ItemLocation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -8,14 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ItemLocationTest {
     @Mock
 
-    private ItemLocationDomain itemLocation;
+    private ItemLocation itemLocation;
 
     @Mock
-    private ItemLocationDomain item;
+    private ItemLocation item;
 
     @BeforeEach
     public void setUp() {
-        itemLocation = new ItemLocationDomain(1, "Test Location");
+        itemLocation = new ItemLocation(1, "Test Location");
     }
 
     @Test
@@ -25,7 +25,7 @@ public class ItemLocationTest {
 
     @Test
     public void testGetIDDefConstructor() {
-        item = new ItemLocationDomain();
+        item = new ItemLocation();
         assertEquals(0, item.getID());
     }
 

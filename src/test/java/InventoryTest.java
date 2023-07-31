@@ -1,6 +1,6 @@
-import domain.InventoryDomain;
-import domain.ItemCategoryDomain;
-import domain.ItemLocationDomain;
+import domain.Inventory;
+import domain.ItemCategory;
+import domain.ItemLocation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -11,19 +11,19 @@ import static org.mockito.Mockito.mock;
 public class InventoryTest {
 
     @Mock
-    private InventoryDomain inventory;
+    private Inventory inventory;
     @Mock
-    private InventoryDomain inv;
+    private Inventory inv;
 
     @Mock
-    private ItemCategoryDomain itemCategory;
+    private ItemCategory itemCategory;
 
     @Mock
-    private ItemLocationDomain itemLocation;
+    private ItemLocation itemLocation;
 
     @BeforeEach
     public void setUp() {
-        inventory = new InventoryDomain(1, "Test Item", 10, itemCategory, itemLocation);
+        inventory = new Inventory(1, "Test Item", 10, itemCategory, itemLocation);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class InventoryTest {
 
     @Test
     public void testGetIDDefConstructor() {
-        inv = new InventoryDomain();
+        inv = new Inventory();
         assertEquals(0, inv.getID());
     }
 
@@ -77,14 +77,14 @@ public class InventoryTest {
 
     @Test
     public void testSetItemCategory() {
-        ItemCategoryDomain newCategory = mock(ItemCategoryDomain.class);
+        ItemCategory newCategory = mock(ItemCategory.class);
         inventory.setItemCategory(newCategory);
         assertEquals(newCategory, inventory.getItemCategory());
     }
 
     @Test
     public void testSetItemLocation() {
-        ItemLocationDomain newLocation = mock(ItemLocationDomain.class);
+        ItemLocation newLocation = mock(ItemLocation.class);
         inventory.setItemLocation(newLocation);
         assertEquals(newLocation, inventory.getItemLocation());
     }

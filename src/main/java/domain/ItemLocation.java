@@ -1,13 +1,13 @@
 package domain;
 
-public class ItemLocationDomain {
+public class ItemLocation {
     private int ID;
     private String locationName;
 
-    public ItemLocationDomain() {
+    public ItemLocation() {
     }
 
-    public ItemLocationDomain(int ID, String locationName) {
+    public ItemLocation(int ID, String locationName) {
         this.ID = ID;
         this.locationName = locationName;
     }

@@ -1,15 +1,15 @@
 package domain;
 
-public class InventoryDomain {
+public class Inventory {
     private int ID, itemQuantity;
     private String itemName;
-    private ItemCategoryDomain itemCategory;
-    private ItemLocationDomain itemLocation;
+    private ItemCategory itemCategory;
+    private ItemLocation itemLocation;
 
-    public InventoryDomain() {
+    public Inventory() {
     }
 
-    public InventoryDomain(int ID, String itemName, int itemQuantity, ItemCategoryDomain itemCategory, ItemLocationDomain itemLocation) {
+    public Inventory(int ID, String itemName, int itemQuantity, ItemCategory itemCategory, ItemLocation itemLocation) {
         this.ID = ID;
         this.itemName = itemName;
         this.itemQuantity = itemQuantity;
@@ -41,19 +41,19 @@ public class InventoryDomain {
         this.itemQuantity = itemQuantity;
     }
 
-    public ItemCategoryDomain getItemCategory() {
+    public ItemCategory getItemCategory() {
         return itemCategory;
     }
 
-    public void setItemCategory(ItemCategoryDomain itemCategory) {
+    public void setItemCategory(ItemCategory itemCategory) {
         this.itemCategory = itemCategory;
     }
 
-    public ItemLocationDomain getItemLocation() {
+    public ItemLocation getItemLocation() {
         return itemLocation;
     }
 
-    public void setItemLocation(ItemLocationDomain itemLocation) {
+    public void setItemLocation(ItemLocation itemLocation) {
         this.itemLocation = itemLocation;
     }
 }

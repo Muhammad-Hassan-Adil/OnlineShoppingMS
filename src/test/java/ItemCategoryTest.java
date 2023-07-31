@@ -1,4 +1,4 @@
-import domain.ItemCategoryDomain;
+import domain.ItemCategory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ItemCategoryTest {
     @Mock
-    private ItemCategoryDomain itemCategory;
+    private ItemCategory itemCategory;
 
     @Mock
-    private ItemCategoryDomain item;
+    private ItemCategory item;
 
     @BeforeEach
     public void setUp() {
-        itemCategory = new ItemCategoryDomain(1, "Test Category");
+        itemCategory = new ItemCategory(1, "Test Category");
     }
 
     @Test
@@ -24,7 +24,7 @@ public class ItemCategoryTest {
 
     @Test
     public void testGetIDDefConstructor() {
-        item = new ItemCategoryDomain();
+        item = new ItemCategory();
         assertEquals(0, item.getID());
     }
 

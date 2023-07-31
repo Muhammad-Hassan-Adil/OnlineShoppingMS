@@ -1,23 +1,13 @@
-import domain.InventoryDomain;
-import domain.ItemCategoryDomain;
-import domain.ItemLocationDomain;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import services.InventoryServices;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import domain.*;
+import org.junit.jupiter.api.*;
+import java.sql.*;
+import org.mockito.*;
+import services.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
-
 public class InventoryServicesTest {
-
     @Mock
     private Connection mockConnection;
 
@@ -31,10 +21,10 @@ public class InventoryServicesTest {
     private InventoryServices inventoryServices;
 
     @Mock
-    private ItemCategoryDomain itemCategory;
+    private ItemCategory itemCategory;
 
     @Mock
-    private ItemLocationDomain itemLocation;
+    private ItemLocation itemLocation;
 
     @BeforeEach
     public void setUp() throws SQLException {
@@ -59,7 +49,7 @@ public class InventoryServicesTest {
         when(mockResultSet.getString("Category_Name")).thenReturn(categoryName);
         when(mockResultSet.getInt("Location_ID")).thenReturn(1);
         when(mockResultSet.getString("Location_Name")).thenReturn(locationName);
-        InventoryDomain inventoryDomain = inventoryServices.FetchByID(id);
+        Inventory inventoryDomain = inventoryServices.FetchByID(id);
         verify(mockPreparedStatement, times(1)).setInt(1, id);
         verify(mockPreparedStatement, times(1)).executeQuery();
         assertEquals(id, inventoryDomain.getID());
@@ -84,7 +74,7 @@ public class InventoryServicesTest {
         when(mockResultSet.getString("Category_Name")).thenReturn(categoryName);
         when(mockResultSet.getInt("Location_ID")).thenReturn(1);
         when(mockResultSet.getString("Location_Name")).thenReturn(locationName);
-        List<InventoryDomain> inventoryDomainList = inventoryServices.FetchAll();
+        List<Inventory> inventoryDomainList = inventoryServices.FetchAll();
         verify(mockPreparedStatement, times(1)).executeQuery();
         assertEquals(id, inventoryDomainList.get(0).getID());
         assertEquals(itemName, inventoryDomainList.get(0).getItemName());
@@ -94,7 +84,7 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testFetchAllByCategory() throws SQLException, ClassNotFoundException {
+    public void testFetchAllByCategory() throws SQLException {
         int id = 1;
         String itemName = "Sample Item";
         int itemQuantity = 10;
@@ -108,7 +98,7 @@ public class InventoryServicesTest {
         when(mockResultSet.getString("Category_Name")).thenReturn(categoryName);
         when(mockResultSet.getInt("Location_ID")).thenReturn(1);
         when(mockResultSet.getString("Location_Name")).thenReturn(locationName);
-        List<InventoryDomain> inventoryDomainList = inventoryServices.FetchAllByCategory(1);
+        List<Inventory> inventoryDomainList = inventoryServices.FetchAllByCategory(1);
         verify(mockPreparedStatement, times(1)).setInt(1, 1);
         verify(mockPreparedStatement, times(1)).executeQuery();
         assertEquals(id, inventoryDomainList.get(0).getID());
@@ -119,7 +109,7 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testFetchAllByLocation() throws SQLException, ClassNotFoundException {
+    public void testFetchAllByLocation() throws SQLException {
         int id = 1;
         String itemName = "Sample Item";
         int itemQuantity = 10;
@@ -133,7 +123,7 @@ public class InventoryServicesTest {
         when(mockResultSet.getString("Category_Name")).thenReturn(categoryName);
         when(mockResultSet.getInt("Location_ID")).thenReturn(1);
         when(mockResultSet.getString("Location_Name")).thenReturn(locationName);
-        List<InventoryDomain> inventoryDomainList = inventoryServices.FetchAllByLocation(1);
+        List<Inventory> inventoryDomainList = inventoryServices.FetchAllByLocation(1);
         verify(mockPreparedStatement, times(1)).setInt(1, 1);
         verify(mockPreparedStatement, times(1)).executeQuery();
         assertEquals(id, inventoryDomainList.get(0).getID());
@@ -144,7 +134,7 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testFetchAllByLocationAndCategory() throws SQLException, ClassNotFoundException {
+    public void testFetchAllByLocationAndCategory() throws SQLException {
         int id = 1;
         String itemName = "Sample Item";
         int itemQuantity = 10;
@@ -158,7 +148,7 @@ public class InventoryServicesTest {
         when(mockResultSet.getString("Category_Name")).thenReturn(categoryName);
         when(mockResultSet.getInt("Location_ID")).thenReturn(1);
         when(mockResultSet.getString("Location_Name")).thenReturn(locationName);
-        List<InventoryDomain> inventoryDomainList = inventoryServices.FetchAllByLocationAndCategory(1, 1);
+        List<Inventory> inventoryDomainList = inventoryServices.FetchAllByLocationAndCategory(1, 1);
         verify(mockPreparedStatement, times(1)).setInt(1, 1);
         verify(mockPreparedStatement, times(1)).setInt(2, 1);
         verify(mockPreparedStatement, times(1)).executeQuery();
@@ -170,15 +160,15 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testAddNewInventoryItem() throws SQLException, ClassNotFoundException {
+    public void testAddNewInventoryItem() throws SQLException {
         int id = 1;
         String itemName = "Sample Item";
         int itemQuantity = 10;
         String categoryName = "Sample Category";
         String locationName = "Sample Location";
-        itemCategory = new ItemCategoryDomain(1, categoryName);
-        itemLocation = new ItemLocationDomain(1, locationName);
-        InventoryDomain inventoryDomain = new InventoryDomain(id, itemName, itemQuantity, itemCategory, itemLocation);
+        itemCategory = new ItemCategory(1, categoryName);
+        itemLocation = new ItemLocation(1, locationName);
+        Inventory inventoryDomain = new Inventory(id, itemName, itemQuantity, itemCategory, itemLocation);
         when(mockResultSet.next()).thenReturn(true).thenReturn(false);
         when(mockResultSet.getInt("ID")).thenReturn(id);
         when(mockResultSet.getString("Name")).thenReturn(itemName);
@@ -197,15 +187,15 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testUpdateExistingInventoryItemByID() throws SQLException, ClassNotFoundException {
+    public void testUpdateExistingInventoryItemByID() throws SQLException {
         int id = 1;
         String itemName = "Sample Item";
         int itemQuantity = 10;
         String categoryName = "Sample Category";
         String locationName = "Sample Location";
-        itemCategory = new ItemCategoryDomain(1, categoryName);
-        itemLocation = new ItemLocationDomain(1, locationName);
-        InventoryDomain inventoryDomain = new InventoryDomain(id, itemName, itemQuantity, itemCategory, itemLocation);
+        itemCategory = new ItemCategory(1, categoryName);
+        itemLocation = new ItemLocation(1, locationName);
+        Inventory inventoryDomain = new Inventory(id, itemName, itemQuantity, itemCategory, itemLocation);
         when(mockResultSet.next()).thenReturn(true).thenReturn(false);
         when(mockResultSet.getInt("ID")).thenReturn(id);
         when(mockResultSet.getString("Name")).thenReturn(itemName);
@@ -224,8 +214,7 @@ public class InventoryServicesTest {
     }
 
     @Test
-    public void testDeleteExistingInventoryItemById() throws SQLException, ClassNotFoundException {
-        ;
+    public void testDeleteExistingInventoryItemById() throws SQLException {
         int id = 1;
         inventoryServices.DeleteExistingInventoryItemById(id);
         verify(mockPreparedStatement, times(1)).setInt(1, id);

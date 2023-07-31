@@ -1,13 +1,13 @@
 package domain;
 
-public class ItemCategoryDomain {
+public class ItemCategory {
     private int ID;
     private String categoryName;
 
-    public ItemCategoryDomain() {
+    public ItemCategory() {
     }
 
-    public ItemCategoryDomain(int ID, String categoryName) {
+    public ItemCategory(int ID, String categoryName) {
         this.ID = ID;
         this.categoryName = categoryName;
     }
